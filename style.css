@@ -1,7 +1,6 @@
 * {
     scroll-behavior: smooth;
     word-wrap: wrap;
-    overflow-y: auto;
     margin-bottom: 5px;
 }
 
@@ -30,7 +29,7 @@ body{
     height: 100%;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    overflow-y: hidden;
+    overflow-y: auto;
     background-repeat: no-repeat;
     
 }
@@ -116,7 +115,7 @@ body{
     padding: 3%;
     cursor: pointer;
     transition: all 0.2s;
-    
+    overflow: none;
 }
 
 .optionButton:hover{
@@ -281,4 +280,3 @@ ul{
 a {
     color: white;
 }
-
