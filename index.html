@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" href="./public/img/calculator.png">
+        <title>GAMING MATH QUIZ</title>
+        
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <video autoplay muted loop id="background-video">
+            <source src="./public/video/videoBackground.mp4" type="video/mp4">
+        </video>
+
+        <div class="container">
+            <img onclick="audioPlay()" id="pacManPlay" class="pacMan" src="./public/img/calculator.png">
+            <img onclick="audioPause()" id="pacManPause" class="pacMan" style="display:none" src="./public/img/calculator.png">
+            <div id="mainBox" class="mainBox">
+                <div id="divInterna">
+                    <div id="menuPrincipal">
+                        <h1>GAMING MATH QUIZ</h1> 
+                        <h2>Teste seu conhecimento sobre Matemática</h2>
+                    </div>
+                    <div id="divQuestoes" style="display: none">
+                        <div id="question1" style="display: none">
+                            <div class="headingContainer">
+                                <h1>Nivel Fácil - Adição e Subtração</h1>
+                                <h1>1 - Um número foi somado 6500 e o resultado obtido foi 10000. Que número é esse??</h1>                                                          
+                                </div>
+                                <div id="question1Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2600</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">4000</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">3500</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">4500</button>
+                            </div>
+                        </div>
+                        <div id="question2" style="display: none">
+                            <div class="headingContainer">
+                                <h1>2 - Qual o resultado de 999+999?</h1>
+                                </div>
+                                
+                                <div id="question2Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">1996</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2.000</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">1.999</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">1.998</button>
+                            </div>
+                        </div>
+                        <div id="question3" style="display: none">
+                            <div class="headingContainer">
+                                <h1>3 - Resolva a diferença: 9750 – 3525 = ?</h1>
+                                </div>
+                                
+                                <div id="question3Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">7346</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">6225</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">6264</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">6175</button>
+                            </div>
+                        </div>
+                        <div id="question4" style="display: none">
+                            <div class="headingContainer">
+                                <h1>4 - Qual é o dobro 1500??</h1>
+                                </div>
+
+                                <div id="question4Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">1.500</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2.000</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">3.000</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">6.000</button>
+                            </div>
+                        </div>
+                        <div id="question5" style="display: none">
+                            <div class="headingContainer">
+                                <h1>5 - Some 3 + (-2)?</h1>
+                                </div>
+                                
+                                <div id="question5Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">5</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">4</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">1</button>
+                            </div>
+                        </div>
+                        <div id="question6" style="display: none">
+                            <div class="headingContainer">
+                                <h1>Nivel Médio - Adição e Subtração</h1>
+                                <h1>6 - Quantos alunos estudam em uma escola em que há 1 407 pela manhã e 1 825 pela tarde?</h1>
+                                </div>
+
+                                <div id="question6Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">3.232</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2.987</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2.998</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">"3.142</button>
+                            </div>
+                        </div>
+                        <div id="question7" style="display: none">
+                            <div class="headingContainer">
+                                <h1>7 - O perímetro de um terreno retangular é igual a 712 metros quadrados. Sabendo que seu lado maior mede 245 metros, qual a medida do lado menor desse terreno?</h1>
+                                </div>
+                                
+                                <div id="question7Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">467 metros</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">312 metros</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">111 metros</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">211 metros</button>
+                            </div>
+                        </div>
+                        <div id="question8" style="display: none">
+                            <div class="headingContainer">
+                                <h1>8 - Um fazendeiro mediu sua terra, de formato retangular, para cercá-la inteiramente com uma cerca de madeira. Quantos metros de cerca ele deverá fazer para sua fazenda que possui 1500 metros de largura por 2789 metros de comprimento?</h1>
+                                </div>
+                               
+                                <div id="question8Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">8000 metros</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">4289 metros</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">9000 metros</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">8578 metros</button>
+                            </div>
+                        </div>
+
+                        <div id="question9" style="display: none">
+                            <div class="headingContainer">
+                                <h1>9 - Um piloto de avião está no meio de uma viagem internacional de 6 mil quilômetros. Se já havia passado 4.589 quilômetros, quanto ainda falta para percorrer?                                </h1>
+                                </div>
+                                <div class="imageContainer2">
+                                </div>
+                                <div id="question9Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">1000 km</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">1409 km</button>
+                                    <button onClick="questionAnswered(true)"  class="optionButton questionButton">1411 km</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2589 km</button>
+                            </div>
+                        </div>
+
+                        <div id="question10" style="display: none">
+                            <div class="headingContainer">
+                                <h1>10 - Calcule : ( + 6) + (– 7) – (– 2)</h1>
+                                </div>
+                                
+                                <div id="question10Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">-1</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">-2</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">1</button>
+                            </div>
+                        </div>
+
+                        <div id="question11" style="display: none">
+                            <div class="headingContainer">
+                                <h1>Nivel Dificil - Adição e Subtração</h1>
+                                <h1>11 - Na aquisição de sete computadores, uma escola gastou R$ 14.125,99. Como uma das máquinas veio defeituosa, a escola foi obrigada a devolvê-la e receber de volta R$ 2.044,25. Qual o valor gasto pela escola nos seis computadores adquiridos?</h1>
+                                </div>
+                                
+                                <div id="question11Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">R$ 12.081,74</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 12.121,74</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 12.499,74</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 11.121,74</button>
+                            </div>
+                        </div>
+                        <div id="question12" style="display: none">
+                            <div class="headingContainer">
+                                <h1>12 -Um clube tem uma piscina com capacidade de 28.000 litros de água, uma de 16.000 litros e uma outra de 21.000 litros. Quantos litros de água são necessários para encher as três piscinas completamente?</h1>
+                                </div>
+                                
+                                <div id="question12Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">64.950 litros</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">64.900 litros</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">65.000 litros</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">65.200 litros</button>
+                            </div>
+                        </div>
+                        <div id="question13" style="display: none">
+                            <div class="headingContainer">
+                                <h1>13 - Resolva o seguinte sistema de equação: x + y = 10  x − y = 8</h1>
+                                </div>
+                                
+                                <div id="question13Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">x = 9, y = 1</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">x = 3, y = 7</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">x = 8, y = 2</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">x = 6, y = 4</button>
+                            </div>
+                        </div>
+                        <div id="question14" style="display: none">
+                            <div class="headingContainer">
+                                <h1>14 - João e Ana são irmãos. João tem cinco irmãos a mais do que irmãs. Quantos irmãos Ana tem a mais do que irmãs?</h1>
+                                </div>
+                                
+                                <div id="question14Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">3</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">5</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">7</button>
+                            </div>
+                        </div>
+                        <div id="question15" style="display: none">
+                            <div class="headingContainer">
+                                <h1>15 - No início do ano, 14.730 funcionários trabalhavam em uma grande empresa. No decorrer do ano 748 funcionários foram demitidos e 924 foram contratados. Quantos funcionários a empresa tem agora?</h1>
+                                </div>
+                                
+                                <div id="question15Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">13.921</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">14.906</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">14.839</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">4.996</button>
+                            </div>
+                        </div>
+
+<!-- * ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+                        <div id="question16" style="display: none">
+                            <div class="headingContainer">
+                                <h1>Nivel Fácil - Multiplicação e Divisão</h1>
+                                <h1>16 - Para realizar um campeonato de vôlei em uma escola o professor de educação física decidiu dividir os 96 alunos em grupos. Sabendo que cada equipe para esse esporte deve ser composta por 6 pessoas, quantas equipes o professor conseguiu formar?</h1>
+                                </div>
+                                
+                                <div id="question16Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">14</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">17</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">15</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">16</button>
+                            </div>
+                        </div>
+                        <div id="question17" style="display: none">
+                            <div class="headingContainer">
+                                <h1>17 - Um prestador de serviço, após a realização do trabalho para o qual foi contratado, recebeu o pagamento em 4 notas de R$ 50,00, 2 notas de R$ 20,00 e 3 notas de R$ 2,00. Então, o valor recebido pelo serviço prestado foi igual a:</h1>
+                                </div>
+                                
+                                <div id="question17Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">R$ 246,00</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 206,00</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 198,00</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 230,00</button>
+                            </div>
+                        </div>
+                        <div id="question18" style="display: none">
+                            <div class="headingContainer">
+                                <h1>18 - A dúzia é uma unidade bastante comum para a venda de alguns produtos, como ovos. Um restaurante tem um consumo diário de 3 dúzias e meia por dia, então o número de ovos consumidos durante um dia nesse restaurante é igual a:</h1>
+                                </div>
+                                
+                                <div id="question18Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">36</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">48</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">42</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">52</button>
+                            </div>
+                        </div>
+                        <div id="question19" style="display: none">
+                            <div class="headingContainer">
+                                <h1>19 - Em uma distribuidora de bebidas, foi recebido um pedido com 12 engradados de uma determinada bebida. Sabendo que em cada engradado há 6 garrafas de 2 litros cada uma delas, então a quantidade dessa bebida em litros presente nesse pedido é igual a:</h1>
+                                </div>
+                                
+                                <div id="question19Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">144</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">72</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">124</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">172</button>
+                            </div>
+                        </div>
+                        <div id="question20" style="display: none">
+                            <div class="headingContainer">
+                                <h1>20 - Em um cinema as fileiras foram distribuídas conforme as letras do alfabeto, da letra A até a letra I. Sabendo que a sala do cinema possui 126 poltronas, quantas poltronas foram colocadas em cada fileira?</h1>
+                                </div>
+                                
+                                <div id="question20Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">12</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">15</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">13</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">14</button>
+                            </div>
+                        </div>
+                        <div id="question21" style="display: none">
+                            <div class="headingContainer">
+                                <h1>Nivel Médio - Multiplicação e Divisão</h1>
+                                <h1>21 -Maria dará uma festa e calculou para cada convidado 700 mL de bebida. Sabendo-se que Maria convidará 150 pessoas, o total em litros de bebida que Maria deverá comprar é de, pelo menos:</h1>
+                                </div>
+                                
+                                <div id="question21Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">90</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">100</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">105</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">97</button>
+                            </div>
+                        </div>
+                        <div id="question22" style="display: none">
+                            <div class="headingContainer">
+                                <h1>22 - Uma geladeira com 25% de desconto que está saindo por R$ 2 465,00. Um comprador que tenha realizado um pagamento de entrada no valor de R$ 765,80 e dividido o restante em 12 parcelas iguais, pagou quanto em cada parcela?</h1>
+                                </div>
+                                
+                                <div id="question22Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">R$ 141,60</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 142,60</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 144,60</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 146,60</button>
+                            </div>
+                        </div>
+                        <div id="question23" style="display: none">
+                            <div class="headingContainer">
+                                <h1>23 - Em um cinema, a sala é composta por cadeiras separadas em colunas de A até J com cadeiras numeradas de 1 a 12. Então, o número de cadeiras que existem nessa sala é igual a:",</h1>
+                                </div>
+                                
+                                <div id="question23Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">120</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">180</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">240</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">250</button>
+                            </div>
+                        </div>
+                        <div id="question24" style="display: none">
+                            <div class="headingContainer">
+                                <h1>24 - Amanda, Beatriz, Carla e Daniela foram para a lanchonete durante o intervalo do trabalho e gastaram um total de R$ 35. O valor da conta foi dividido igualmente para cada uma delas, e cada uma pagou:</h1>
+                                </div>
+                                
+                                <div id="question24Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 8,25</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 8</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 8,50</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">R$ 8,75</button>
+                            </div>
+                        </div>
+                        <div id="question25" style="display: none">
+                            <div class="headingContainer">
+                                <h1>25 - Ao final de um campeonato de futebol, o time ganhador teve 19 pontos. Para conseguir essa pontuação, o time teve apenas um empate e foi vitorioso nos demais jogos. Determine quantos jogos eles ganharam, sabendo que um empate dá 1 ponto e uma vitória dá 3 pontos</h1>
+                                </div>
+                                
+                                <div id="question25Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">5</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">6</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">9</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">10</button>
+                            </div>
+                        </div>
+
+                        <div id="question26" style="display: none">
+                            <div class="headingContainer">
+                                <h1>Nivel Dificil - Multiplicação e Divisão </h1>
+                                <h1>26 - Ao realizar o planejamento de uma viagem utilizando gasolina como combustível, estimou-se que seria gasto um total de 32 litros na ida e 32 litros na volta. Se a gasolina estiver custando R$ 6,00, o valor gasto com combustível nessa viagem será igual a:</h1>
+                                </div>
+                                
+                                <div id="question26Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 290,00</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 350, 00</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">R$ 410,00</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">R$ 384,00</button>
+                            </div>
+                        </div>
+                        <div id="question27" style="display: none">
+                            <div class="headingContainer">
+                                <h1>27 - "produtor dispõe de 6 vacas leiteiras, que produzem diariamente, em média, 5 litros de leite por dia. Então, a quantidade de leite produzida em uma semana em média é igual a:</h1>
+                                </div>
+                                
+                                <div id="question27Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">30</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">150</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">210</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">180</button>
+                            </div>
+                        </div>
+                        <div id="question28" style="display: none">
+                            <div class="headingContainer">
+                                <h1>28 - Um mercado público foi construído em uma área de 6 000 metros quadrados. Na preparação do terreno, o espaço foi dividido em três partes iguais. Duas partes foram utilizadas para construir 50 boxes para os feirantes e a parte que sobrou foi reservada ao estacionamento. Calcule qual a área de cada box construído.</h1>
+                                </div>
+                                
+                                <div id="question28Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">70</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">80</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">75</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">90</button>
+                            </div>
+                        </div>
+                        <div id="question29" style="display: none">
+                            <div class="headingContainer">
+                                <h1>29 - Uma empreiteira começou um novo empreendimento imobiliário e irá construir um grande conjunto habitacional. O projeto foi divulgado aos possíveis compradores e investidores. A empresa divulgou o número de 1 200 apartamentos. Sendo 10 edifícios de 15 andares cada. Como os edifícios seguem o mesmo padrão, quantos apartamentos haverá por andar em cada edifício?</h1>
+                                </div>
+                                
+                                <div id="question29Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">13</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">12</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">10</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">8</button>
+                            </div>
+                        </div>
+                        <div id="question30" style="display: none">
+                            <div class="headingContainer">
+                                <h1>30 - Analisando a sequência {A, B, C, D, A, B, C, D, A, B, C, D,…}, seu 1686º termo será:</h1>
+                                </div>
+                                
+                                <div id="question30Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">B</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">A</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">C</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">D</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divQuizFinalizado" style="display: none">
+                        <p>Sua pontuação: ${score}</p>
+                        <br>
+                        <button onclick="reloadPage()" class="optionButton questionButton">Menu Principal</button>
+                    </div>
+                    <div id="divInstrucoes" style="display: none">
+                        <h1>Instruções</h1>
+                        <ol>
+                            <li>Para começar clique em "Começar Quiz".</li>
+                            <li>Para cada resposta correta será contabilizado 1 ponto.</li>
+                            <li>Ao selecionar uma alternativa, aparecerá qual é a 
+                                certa (Verde) e qual é a errada (Vermelha).</li>
+                            <li>Após selecionar uma resposta, você será redirecionado
+                                para a próxima pergunta depois de alguns segundos.</li>
+                            <li>Após o fim do Quiz, clique em "Menu Principal" para voltar a página principal.</li>
+                            <li>Há um Easter-egg no Quiz (É fácil de achar 😉).</li>
+                        </ol>
+                        <button onclick="resetAndGoToMainMenu()" class="optionButton questionButton">Menu Principal</button>
+                    </div>
+                    <div id= "divCreditos" style="display: none">
+                        <h1>Créditos</h1>
+                        <h2 class="groupNames">Integrantes do Grupo:</h2>
+                            
+                                <p class="pName"> Luiz Guilherme </a></p>
+                                <p class="pName"> Denise Cristina</a></p>
+                                <p class="pName"> Thamires da Silva </a></p>
+                                <p class="pName"> Gyovanna Scatollini </a></p>
+                                <p class="pName"> Giovana Lara</a></p>
+                                <p class="pName"> Helena Cristina </a></p>
+                                <p class="pName"> Raíssa Soares </a></p>
+                            
+                            <br>
+                            <button onclick="resetAndGoToMainMenu()" class="optionButton questionButton">Menu Principal</button>
+                    </div>
+                </div>
+            </div>
+            <div class="buttonContainer">
+                <button id="startButton" class="optionButton" onClick="increaseMainBox(renderQuestion)">
+                    Começar Quiz
+                </button>
+                <button id="helpButton" class="optionButton" onClick="increaseMainBox(renderInstructions)">
+                    Instruções
+                </button>
+                <button id="creditsButton" class="optionButton" onClick="increaseMainBox(renderCredits)">
+                    Créditos
+                </button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
